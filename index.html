@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card By Khaled</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="start" id="divStart">
+        <table class="table w-50">
+            <thead>
+                <tr>
+                  <th scope="col">Rank</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Points</th>
+                </tr>
+            </thead>
+
+            <tbody id="rows">
+                <tr>
+                    <td>1</td>
+                    <td>Nosa</td>
+                    <td>95</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Trika</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Zizo</td>
+                    <td>87</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Sika</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Elmor</td>
+                    <td>50</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="bstart w-25 h-25">
+            <button class="btn btn-info" id="start">Start</button>
+            <div> <span id="points"></span></div>
+        </div>
+        
+        <div class="overlay"></div>
+    </div>
+    
+    <div class="info-player">
+        <div class="player">Player : <span id="player">khaled</span></div>
+
+        <div id="timer">
+            <span id="doTimer"></span>
+        </div>
+
+        <div class="try">wrong tries : <span id="count">0</span></div>
+    </div>
+
+    <div class="cards">
+        <div class="card " data-img="img1">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/1.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img1">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/1.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img2">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/2.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img2">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/2.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img3">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/3.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img3">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/3.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img4">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/4.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img4">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/4.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img5" >
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img5">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img6">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/6.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img6">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/6.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img7">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/7.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img7">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/7.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img8">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/8.jpg" alt="">
+            </div>
+        </div>
+        <div class="card " data-img="img8">
+            <div class="front face"></div>
+            <div class="back face">
+                <img src="images/8.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
