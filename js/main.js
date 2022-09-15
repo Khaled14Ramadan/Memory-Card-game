@@ -33,7 +33,12 @@ start.addEventListener('click' , function(){
     divStart.style.display = 'none';//to hidden start page
     count.innerText = count_tries;
     do{
-        playerName = prompt("enter name of student : ");
+        playerName = prompt("enter name of player : ");
+        if(playerName == null)
+        {//if click on cancel
+            location.reload();
+            break;
+        }
         playerName = typeof playerName =="string" ? playerName.trim():false ;
     }while(!playerName);
 
@@ -130,6 +135,8 @@ function showRank(){
     var point = 100 - count_tries - (min+1)*2 ;
     sec=min = hour=0;//to start timer
 
+    points.parentElement.childNodes[0].nodeValue = '';
+    console.log(points.parentElement.childNodes[0].nodeValue)
     points.innerText = point;
     var contant = document.createTextNode("Your Points :")
     points.parentElement.prepend(contant);
@@ -148,8 +155,20 @@ function showRank(){
 
     count_tries = 0;
     
+    var playerExit = score.filter(function(x){
+        if(x.name == playerName ){
+            x.points = point;
+        }
+        return x.name == playerName;
+    });
+    console.log(playerExit);    
+    if(playerExit.length == 0)
+    {
+        score.push({name:playerName , points:point});
+    }
+    else {
 
-    score.push({name:playerName , points:point});
+    }
     score.sort(function(a,b){return (b.points - a.points)});
     localStorage.score = JSON.stringify(score);
     renderTable();
