@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="start" id="divStart">
+    <div class="start pb-4 position-fixed" id="divStart">
         <table class="table w-50">
             <thead>
                 <tr>
                   <th scope="col">Rank</th>
                   <th scope="col">Name</th>
+                  <th scope="col">Timer</th>
                   <th scope="col">Points</th>
                 </tr>
             </thead>
@@ -23,31 +24,36 @@
                 <tr>
                     <td>1</td>
                     <td>Nosa</td>
+                    <td>00:30</td>
                     <td>95</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Trika</td>
+                    <td>00:35</td>
                     <td>90</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Zizo</td>
+                    <td>0025</td>
                     <td>87</td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Sika</td>
+                    <td>00:33</td>
                     <td>80</td>
                 </tr>
                 <tr>
                     <td>5</td>
                     <td>Elmor</td>
+                    <td>03:40</td>
                     <td>50</td>
                 </tr>
             </tbody>
         </table>
-        <div class="bstart w-25 h-25">
+        <div class="bstart h-25">
             <button class="btn btn-info" id="start">Start</button>
             <div> <span id="points"></span></div>
         </div>
@@ -59,7 +65,7 @@
         <div class="player">Player : <span id="player">khaled</span></div>
 
         <div id="timer">
-            <span id="doTimer"></span>
+            Timer: <span id="doTimer"></span>
         </div>
 
         <div class="try">wrong tries : <span id="count">0</span></div>

@@ -1,5 +1,30 @@
-var card = document.getElementsByClassName("card");
+
 var cards = document.getElementsByClassName("cards");
+///////////this for add two cards with mobile for responsive //////////////////////
+
+if(screen.width < 500)
+{
+    var newCard = document.createElement("div");
+        newCard.classList.add('card');
+        newCard.setAttribute('data-img',"img9");
+        newCard.innerHTML = `<div class="front face"></div>
+            <div class="back face">
+                <img src="images/9.png" alt="">
+            </div>`;
+        var newCard2 = document.createElement("div");
+        newCard2.classList.add('card');
+        newCard2.setAttribute('data-img',"img9");
+        newCard2.innerHTML = `<div class="front face"></div>
+            <div class="back face">
+                <img src="images/9.png" alt="">
+            </div>`;
+        console.log(newCard2);
+        cards[0].append(newCard);
+        cards[0].append(newCard2);
+}
+
+/////////////////////////////////////////////////////
+var card = document.getElementsByClassName("card");
 var count = document.getElementById("count");
 var player = document.getElementById("player");
 var start = document.getElementById("start");
@@ -64,7 +89,7 @@ start.addEventListener('click' , function(){
         card.forEach(function(x){
             x.classList.remove('isflipped');
         });
-    }, 1000);
+    }, 1500);
 
     
     // add event for all cards in the start
@@ -155,7 +180,7 @@ function showRank(){
 
     count_tries = 0;
     
-    var playerExit = score.filter(function(x){
+    var playerExit = Score.filter(function(x){
         if(x.name == playerName ){
             x.points = point;
         }
@@ -164,27 +189,27 @@ function showRank(){
     console.log(playerExit);    
     if(playerExit.length == 0)
     {
-        score.push({name:playerName , points:point});
+        Score.push({name:playerName , points:point , timer:doTimer.innerText});
     }
     else {
 
     }
-    score.sort(function(a,b){return (b.points - a.points)});
-    localStorage.score = JSON.stringify(score);
+    Score.sort(function(a,b){return (b.points - a.points)});
+    localStorage.Score = JSON.stringify(Score);
     renderTable();
     
 }
 
 /////////////////////////////localStorage//////////////////////////
-var score = [{name:'Nosa' , points:97} ,
- {name:'Trika' , points:94},
- {name:'Zizo' , points:90},
- {name:'Sika' , points:85},
- {name:'Elmor' , points:82}
+var Score = [{name:'Nosa' , points:97 , timer:"00:30"} ,
+ {name:'Trika' , points:94, timer:"00:35"},
+ {name:'Zizo' , points:90, timer:"00:25"},
+ {name:'Sika' , points:85, timer:"00:33"},
+ {name:'Elmor' , points:82, timer:"03:40"}
 ]
-if(localStorage.score)
+if(localStorage.Score)
 {
-    score = JSON.parse(localStorage.score);
+    Score = JSON.parse(localStorage.Score);
     renderTable();
 }
 
@@ -193,12 +218,13 @@ function renderTable()
 {
     var count = 0;
     rows.innerHTML = "";
-    score.forEach(function(s){
+    Score.forEach(function(s){
         if(count < 6){
             rows.innerHTML += `
             <tr>
                 <td>${++count}</td>
                 <td>${s.name}</td>
+                <td>${s.timer}</td>
                 <td>${s.points}</td>
             </tr>
             `
