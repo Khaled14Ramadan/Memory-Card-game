@@ -1,3 +1,9 @@
+///////////////////////////////Audios/////////////////////////////
+// var backgrounAudio = new Audio('media/background.mp3');
+var correct = new Audio('media/correct.wav');
+var fail = new Audio('media/fail.wav');
+var finish = new Audio('media/finish.wav');
+var filpCard = new Audio('media/flip-card.mp3')
 
 var cards = document.getElementsByClassName("cards");
 ///////////this for add two cards with mobile for responsive //////////////////////
@@ -66,7 +72,7 @@ start.addEventListener('click' , function(){
         }
         playerName = typeof playerName =="string" ? playerName.trim():false ;
     }while(!playerName);
-
+    // backgrounAudio.play();
     //start timer
     flagTimer = setInterval(timer , 1000);
     // console.log(sec);
@@ -103,6 +109,7 @@ start.addEventListener('click' , function(){
 
 function isTheSame()
 {
+    filpCard.play();
     console.log(sec);
     this.classList.add('isflipped');
     
@@ -124,6 +131,11 @@ function isTheSame()
                 that.classList.remove('isflipped');
                 count_tries++;
                 count.innerText = count_tries;
+                fail.play();
+            }
+            else
+            {
+                correct.play();
             }
 
             //to add event for disapper cards
@@ -139,6 +151,7 @@ function isTheSame()
 
             if(card.length == 0)
             {
+                finish.play();
                 clearInterval(flagTimer);
                 showRank();
             }
